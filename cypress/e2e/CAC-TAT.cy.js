@@ -174,8 +174,7 @@ it('marca o tipo de atendimento', () => {
     .selectFile('@sampleFile')
     .should((input) => {
       expect(input[0].files[0].name).to.equal('example.json')
-<<<<<<< HEAD
-=======
+
       
    })
    })
@@ -185,7 +184,6 @@ it('marca o tipo de atendimento', () => {
     cy.contains('a', 'Política de Privacidade')
       .should('have.attr', 'href', 'privacy.html')
       .and('have.attr', 'target', '_blank')
->>>>>>> 5aefa28 (Configure the ci workflow)
    })
 
    it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
