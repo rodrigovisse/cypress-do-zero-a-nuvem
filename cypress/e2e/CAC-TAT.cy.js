@@ -195,8 +195,35 @@ it('marca o tipo de atendimento', () => {
     
    })
 
+    it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
+  cy.get('.success')
+    .should('not.be.visible')
+    .invoke('show')
+    .should('be.visible')
+    .and('contain', 'Mensagem enviada com sucesso.')
+    .invoke('hide')
+    .should('not.be.visible')
+  cy.get('.error')
+    .should('not.be.visible')
+    .invoke('show')
+    .should('be.visible')
+    .and('contain', 'Valide os campos obrigatórios!')
+    .invoke('hide')
+    .should('not.be.visible')
+})
 
+ it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
+  cy.get('#open-text-area')
+  .invoke("val",'Um texto qualquer')
+  .should("have.value", 'Um texto qualquer')
    
+ })
+ it.only('encontre o gato', () => {
+  cy.get('#cat')
+  .invoke('show')
+  .should('be.visible')
+   
+ })
 
 
 
